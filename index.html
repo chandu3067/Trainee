@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trainers Details</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    .btn-purple {
+      color: #fff;
+      background-color: #800080;
+      border-color: #800080;
+    }
+    .btn-purple:hover {
+      color: #fff;
+      background-color: #6a007f;
+      border-color: #6a007f;
+    }
+  </style>
+</head>
+<body>
+<h1 class="text-center">Trainers Details</h1>
+  <div class="container" style="border: 1px solid #ccc; border-radius: 5px; padding: 20px;">
+    
+    <div class="table-responsive">
+      <table class="table" id="trainers-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Specialization</th>
+            <th>Experience</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Trainer 1</td>
+            <td>XYZ</td>
+            <td>5 years</td>
+            <td><button class="btn btn-purple view-details-btn" data-toggle="modal" data-target="#trainerModal" data-name="Trainer 1" data-specialization="XYZ" data-experience="5 years">View Details</button></td>
+          </tr>
+          <tr>
+            <td>Trainer 2</td>
+            <td>ABC</td>
+            <td>8 years</td>
+            <td><button class="btn btn-purple view-details-btn" data-toggle="modal" data-target="#trainerModal" data-name="Trainer 2" data-specialization="ABC" data-experience="8 years">View Details</button></td>
+          </tr>
+          <tr>
+            <td>Trainer 3</td>
+            <td>DEF</td>
+            <td>10 years</td>
+            <td><button class="btn btn-purple view-details-btn" data-toggle="modal" data-target="#trainerModal" data-name="Trainer 3" data-specialization="DEF" data-experience="10 years">View Details</button></td>
+          </tr>
+          <tr>
+            <td>Trainer 4</td>
+            <td>GHI</td>
+            <td>7 years</td>
+            <td><button class="btn btn-purple view-details-btn" data-toggle="modal" data-target="#trainerModal" data-name="Trainer 4" data-specialization="GHI" data-experience="7 years">View Details</button></td>
+          </tr>
+          <!-- Add more trainers here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Trainer Modal -->
+  <div class="modal fade" id="trainerModal" tabindex="-1" role="dialog" aria-labelledby="trainerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="trainerModalLabel">Trainer Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3 id="trainerName"></h3>
+          <p><strong>Specialization:</strong> <span id="trainerSpecialization"></span></p>
+          <p><strong>Experience:</strong> <span id="trainerExperience"></span></p>
+          <!-- Add more details here if needed -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (optional, for certain features like dropdowns, modals, etc.) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Custom Script -->
+  <script>
+    $(document).ready(function(){
+      $('.view-details-btn').click(function(){
+        var name = $(this).data('name');
+        var specialization = $(this).data('specialization');
+        var experience = $(this).data('experience');
+        $('#trainerName').text(name);
+        $('#trainerSpecialization').text(specialization);
+        $('#trainerExperience').text(experience);
+      });
+    });
+  </script>
+</body>
+</html>
